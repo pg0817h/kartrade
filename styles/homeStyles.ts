@@ -1,4 +1,4 @@
-import { createStyles } from '@mantine/core';
+import { createStyles,em } from '@mantine/core';
 
 export const homeStyles = createStyles(() => ({
     pageWrapper: {
@@ -20,7 +20,7 @@ export const homeStyles = createStyles(() => ({
         height: '100vh',
         fontStyle: 'normal',
       fontFamily: 'NeueHaasUnica,sans-serif',
-      '@media only screen and (min-width: 800px)': {
+     [`@media only screen and (min-width: ${em(800)})`]: {
         position: 'relative',
         width: '100%',
         maxWidth: '420px',

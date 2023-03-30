@@ -13,13 +13,13 @@ export default function Item({
         <img src={newPath} />
         <div className={classes.profileContainer}>
           <img className={classes.imgNickname} src={newPath} />
-          <div>{`@${nickname}`}</div>
+          <div className={classes.nickNameTxt}>{`@${nickname}`}</div>
         </div>
       </div>
       <section className={classes.descContainer}>
-        <h4>{title}</h4>
+        <h4 className={classes.descTitle}>{title}</h4>
         <div className={classes.descDetail}>{description}</div>
-        <div>{`USD ${price}`}</div>
+        <div className={classes.descPrice}>{`USD ${price}`}</div>
       </section>
     </div>
   );
