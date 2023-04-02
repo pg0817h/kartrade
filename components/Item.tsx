@@ -1,10 +1,11 @@
-import { CardData } from '@/pages/api/get-cards';
+import React from 'react';
+import { CardData } from '@/pages/api/cards';
 import { useStyles } from './ItemsStyles';
 
 type Props = { post: CardData };
-export default function Item({
-  post: { id, mainImage, title, description, price, detailImage, nickname },
-}: Props) {
+const Item: React.FC<Props> = ({
+  post: { mainImage, title, description, price, nickname },
+}: Props) => {
   const newPath = mainImage.replace('/public', '');
   const { classes } = useStyles();
   return (
@@ -23,4 +24,5 @@ export default function Item({
       </section>
     </div>
   );
-}
+};
+export default Item;
