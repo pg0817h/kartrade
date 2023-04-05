@@ -1,23 +1,22 @@
 import React from 'react';
 import { DetailData } from '@/pages/api/card/[id]';
-import { useStyles } from './ItemsStyles';
+import { useStyles } from './DetailStyles';
 
 type Props = { detail: DetailData };
 
-const Detail: React.FC<Props> = ({
+const ImageWrapper: React.FC<Props> = ({
   detail: { id, detailImage, title, description, price, nickname },
 }: Props) => {
   const { classes } = useStyles();
-  console.log('detailImage', detailImage);
   return (
-    <div className={classes.container}>
-      <div className={classes.imgContainer}>
-        {detailImage.map((image) => (
+    <div>
+      {detailImage.map((image) => (
+        <div className={classes.imgContainer}>
           <img src={image.replace('/public', '')} />
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Detail;
+export default ImageWrapper;

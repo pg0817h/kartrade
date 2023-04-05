@@ -16,10 +16,11 @@ export default function App({ Component, pageProps }: AppProps) {
         },
         fontFamily: 'NeueHaasUnica',
         headings: {
+          fontWeight: 'normal',
           sizes: {
-            h1: { fontSize: '60px', fontWeight: '500', lineHeight: '60px' },
-            h2: { fontSize: '35px', fontWeight: '500', lineHeight: '32px' },
-            h3: { fontSize: '28px', fontWeight: '500', lineHeight: '32px' },
+            h1: { fontSize: '60px', lineHeight: '60px' },
+            h2: { fontSize: '35px', lineHeight: '32px' },
+            h3: { fontSize: '28px', lineHeight: '32px' },
           },
           fontFamily: 'NeueHaasUnica',
         },
