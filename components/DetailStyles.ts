@@ -77,6 +77,20 @@ export const useStyles = createStyles((theme) => ({
       marginBottom: '2em',
       marginTop: '0',
       fontWeight: 300
+    },
+    quantityBox: {
+      display: 'flex',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      padding: '2em 25px',
+      borderBottom: '1px solid rgb(216,216,216)',
+      boxSizing: 'border-box',
+      width: '100%',
+      color: theme.colors.black
+    },
+   
+    quantityMargin: {
+      marginRight: '38px',
+     
     }
-    
 }));

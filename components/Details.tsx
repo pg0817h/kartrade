@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { DetailData } from '@/pages/api/card/[id]';
 import ImageWrapper from './ImageWrapper';
+import CardQuntity from './CardQuantity';
 import { useStyles } from './DetailStyles';
 import icon from '../public/message.svg';
 
@@ -37,6 +38,7 @@ const Details: React.FC<Props> = ({ details }: Props) => {
           </div>
         </div>
         <ImageWrapper key={detail.id} detail={detail} />
+        <CardQuntity />
       </div>
     </>
   );
