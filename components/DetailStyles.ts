@@ -59,6 +59,7 @@ export const useStyles = createStyles((theme) => ({
     infoHeader: {
         margin: '0px 0px 0.1em',
         fontSize: theme.headings.sizes['h3'].fontSize,
+        fontWeight: theme.headings.sizes['h3'].fontWeight as number,
         color: theme.colors.black,
         lineHeight: theme.headings.sizes['h3'].lineHeight
       
