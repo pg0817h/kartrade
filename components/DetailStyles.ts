@@ -83,7 +83,7 @@ export const useStyles = createStyles((theme) => ({
       display: 'flex',
       justifyContent: 'flex-start',
       alignItems: 'center',
-      padding: '2em 25px',
+      padding: '2em 25px 2em 0',
       borderBottom: '1px solid rgb(216,216,216)',
       boxSizing: 'border-box',
       width: '100%',

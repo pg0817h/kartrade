@@ -1,5 +1,5 @@
 import Details from '@/components/Details';
-import { homeStyles } from '../../../styles/homeStyles';
+import { homeStyles } from '../../styles/homeStyles';
 import { DetailData } from '@/pages/api/card/[id]';
 import { CardData } from '@/pages/api/cards';
 type CardProps = CardData;
