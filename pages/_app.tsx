@@ -1,8 +1,11 @@
 import { MantineProvider } from '@mantine/core';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import { homeStyles } from '../styles/homeStyles';
+import Navbar from '@/components/Navigation';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { classes } = homeStyles();
   return (
     <MantineProvider
       theme={{
@@ -36,7 +39,12 @@ export default function App({ Component, pageProps }: AppProps) {
         },
       }}
     >
-      <Component {...pageProps} />
+      <div className={classes.pageWrapper}>
+        <div className={classes.itemsContainer}>
+          <Navbar />
+          <Component {...pageProps} />
+        </div>
+      </div>
     </MantineProvider>
   );
 }

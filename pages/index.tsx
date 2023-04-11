@@ -1,18 +1,10 @@
 import { CardData } from '@/pages/api/cards';
 import Items from '@/components/Items';
-import { homeStyles } from '../styles/homeStyles';
 
 type Props = { posts: CardData[] };
 
 export default function Home(props: Props) {
-  const { classes } = homeStyles();
-  return (
-    <div className={classes.pageWrapper}>
-      <div className={classes.itemsContainer}>
-        <Items posts={props.posts} />
-      </div>
-    </div>
-  );
+  return <Items posts={props.posts} />;
 }
 export async function getStaticProps() {
   const res = await fetch('http://localhost:3000/api/cards');
