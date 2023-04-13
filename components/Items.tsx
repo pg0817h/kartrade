@@ -14,10 +14,11 @@ const Items: React.FC<Props> = ({ posts }: Props) => {
     const sorted = [...posts];
     if (selectedValue === 'price_inc') {
       sorted.sort((a, b) => a.price - b.price);
+      setSortedPosts(sorted);
     } else if (selectedValue === 'price_dec') {
       sorted.sort((a, b) => b.price - a.price);
+      setSortedPosts(sorted);
     }
-    setSortedPosts(sorted);
   }, [selectedValue, posts]);
   return (
     <>

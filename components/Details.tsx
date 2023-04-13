@@ -5,6 +5,7 @@ import ImageWrapper from './ImageWrapper';
 import CardQuntity from './CardQuantity';
 import { useStyles } from './DetailStyles';
 import icon from '../public/message.svg';
+import DetailPathBar from './DetailPathBar';
 
 type Props = { details: DetailData[] };
 
@@ -13,6 +14,7 @@ const Details: React.FC<Props> = ({ details }: Props) => {
   const { classes } = useStyles();
   return (
     <>
+      <DetailPathBar />
       <div className={classes.container}>
         <div className={classes.contentContainer}>
           <div className={classes.profileContainer}>
