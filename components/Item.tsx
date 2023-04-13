@@ -4,14 +4,16 @@ import { useStyles } from './ItemsStyles';
 
 type Props = { post: CardData };
 const Item: React.FC<Props> = ({
-  post: { mainImage, title, description, price, nickname },
+  post: { mainImage, title, description, price, nickname, id },
 }: Props) => {
   const newPath = mainImage.replace('/public', '');
   const { classes } = useStyles();
   return (
     <div className={classes.container}>
       <div className={classes.imgContainer}>
-        <img src={newPath} />
+        <a href={`cards/${id}`}>
+          <img src={newPath} />
+        </a>
         <div className={classes.profileContainer}>
           <img className={classes.imgNickname} src={newPath} />
           <div className={classes.nickNameTxt}>{`@${nickname}`}</div>

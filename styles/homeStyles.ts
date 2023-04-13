@@ -8,10 +8,10 @@ export const homeStyles = createStyles(() => ({
         display:'flex',
         overflow: 'auto',
         flexDirection: 'column',
-        backgroundSize: '400px',
-        backgroundImage: 'url(/logo.svg)',
+        backgroundSize: '500px',
+        backgroundImage: 'url(/logo.png)',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: '15% 50%',
+        backgroundPosition: '5% 50%',
         boxSizing: 'border-box'
     },
 
@@ -25,7 +25,7 @@ export const homeStyles = createStyles(() => ({
         width: '100%',
         maxWidth: '420px',
         minHeight: '100vh',
-        margin: '0px 0px 0px calc(50%)',
+        margin: '0px 0px 0px calc(50% - 1px)',
         zoom: '1.25'
       },
     },
