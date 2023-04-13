@@ -3,6 +3,7 @@ export const useStyles = createStyles((theme) => ({
   navWrapper: {
     width: '100%',
     maxWidth: '420px',
+    height: '50px',
     borderBottom: '1px solid rgb(216, 216, 216)',
     display: 'flex',
     justifyContent: 'space-between',
