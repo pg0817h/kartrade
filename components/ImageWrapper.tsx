@@ -10,8 +10,8 @@ const ImageWrapper: React.FC<Props> = ({
   const { classes } = useStyles();
   return (
     <div>
-      {detailImage.map((image) => (
-        <div className={classes.imgContainer}>
+      {detailImage.map((image, key) => (
+        <div className={classes.imgContainer} key={key}>
           <img src={image.replace('/public', '')} />
         </div>
       ))}

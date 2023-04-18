@@ -13,7 +13,7 @@ const SortBar: React.FC<Props> = ({ handleChange }: Props) => {
           className={classes.selectBox}
           onChange={handleChange}
         >
-          <option value="default">Price ($)</option>
+          <option value="">Price ($)</option>
           <option value="price_inc">Price: low to high</option>
           <option value="price_dec">Price: high to low</option>
         </select>
