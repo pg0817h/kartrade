@@ -1,17 +1,17 @@
 import { CardData } from '@/pages/api/cards';
 import Items from '@/components/Items';
-import { homeStyles } from '../styles/homeStyles';
+import HomeImage from '@/components/HomeImage';
+import Footer from '@/components/Footer';
 
 type Props = { posts: CardData[] };
 
 export default function Home(props: Props) {
-  const { classes } = homeStyles();
   return (
-    <div className={classes.pageWrapper}>
-      <div className={classes.itemsContainer}>
-        <Items posts={props.posts} />
-      </div>
-    </div>
+    <>
+      <HomeImage />
+      <Items posts={props.posts} />
+      <Footer />
+    </>
   );
 }
 export async function getStaticProps() {

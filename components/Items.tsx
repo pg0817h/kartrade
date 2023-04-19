@@ -7,8 +7,8 @@ const Items: React.FC<Props> = ({ posts }: Props) => {
   return (
     <>
       {posts.map((post) => (
-        <div>
-          <Item key={post.id} post={post} />
+        <div key={post.id}>
+          <Item post={post} />
         </div>
       ))}
     </>

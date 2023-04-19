@@ -1,19 +1,18 @@
-import { CSSProperties } from '@emotion/serialize';
 import { createStyles } from '@mantine/core';
 
 export const useStyles = createStyles((theme) => ({
     container: {
-        borderBottom: '1px solid rgb(216, 216, 216)',
         backgroundColor: theme.colors.white,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
         boxSizing: 'border-box',
-        padding: '25px',
+        padding: '0px 25px',
       },
     imgContainer: {
         width: '100%',
+        display:'flex',
         padding: '1.5em 0px',
         backgroundColor: theme.colors.white,
         borderBottom: '1px solid rgb(216, 216, 216)',

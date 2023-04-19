@@ -1,13 +1,19 @@
 import { MantineProvider } from '@mantine/core';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import { homeStyles } from '../styles/homeStyles';
+import Navbar from '@/components/Navigation';
+import SortBar from '@/components/SortBar';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { classes } = homeStyles();
   return (
     <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
       theme={{
         colors: {
-          black: ['#1A1A1A'],
+          black: ['#1a1a1a'],
           white: ['#FFFFFF', '#F7F8FA'],
           gray: ['#777777', '#E5E5E5', '#515151'],
           green: ['#30BE76'],
@@ -36,7 +42,13 @@ export default function App({ Component, pageProps }: AppProps) {
         },
       }}
     >
-      <Component {...pageProps} />
+      <div className={classes.pageWrapper}>
+        <div className={classes.itemsContainer}>
+          <Navbar />
+          <SortBar />
+          <Component {...pageProps} />
+        </div>
+      </div>
     </MantineProvider>
   );
 }

@@ -1,5 +1,4 @@
 import Details from '@/components/Details';
-import { homeStyles } from '../../styles/homeStyles';
 import { DetailData } from '@/pages/api/card/[id]';
 import { CardData } from '@/pages/api/cards';
 type CardProps = CardData;
@@ -9,16 +8,7 @@ type PostParams = {
 };
 
 export default function Cards(props: Props) {
-  const { classes } = homeStyles();
-  return (
-    <>
-      <div className={classes.pageWrapper}>
-        <div className={classes.itemsContainer}>
-          <Details details={props.details} />
-        </div>
-      </div>
-    </>
-  );
+  return <Details details={props.details} />;
 }
 export async function getStaticPaths() {
   // Fetch the list of all card IDs from an API
