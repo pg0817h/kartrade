@@ -9,9 +9,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const { classes } = homeStyles();
   return (
     <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
       theme={{
         colors: {
-          black: ['#1A1A1A'],
+          black: ['#1a1a1a'],
           white: ['#FFFFFF', '#F7F8FA'],
           gray: ['#777777', '#E5E5E5', '#515151'],
           green: ['#30BE76'],

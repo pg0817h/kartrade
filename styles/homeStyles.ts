@@ -12,7 +12,8 @@ export const homeStyles = createStyles(() => ({
         backgroundImage: 'url(/logo.png)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '10% 50%',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        
     },
 
   
