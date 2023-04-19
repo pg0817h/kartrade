@@ -12,17 +12,15 @@ const DetailPathBar: React.FC = () => {
     router.push('/');
   };
   return (
-    <>
-      <div className={classes.sortBarWrapper}>
-        <div className={classes.pathBar}>
-          <span className={classes.pathBarhome} onClick={handleClick}>
-            Home
-          </span>
-          <Image className={classes.icon} src={icon} alt="Icon" />
-          <span className={classes.pathBarDetail}>Detail Page</span>
-        </div>
+    <div className={classes.sortBarWrapper}>
+      <div className={classes.pathBar}>
+        <span className={classes.pathBarhome} onClick={handleClick}>
+          Home
+        </span>
+        <Image className={classes.icon} src={icon} alt="Icon" />
+        <span className={classes.pathBarDetail}>Detail Page</span>
       </div>
-    </>
+    </div>
   );
 };
 

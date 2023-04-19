@@ -4,9 +4,7 @@ import { useStyles } from './DetailStyles';
 
 type Props = { detail: DetailData };
 
-const ImageWrapper: React.FC<Props> = ({
-  detail: { id, detailImage, title, description, price, nickname },
-}: Props) => {
+const ImageWrapper: React.FC<Props> = ({ detail: { detailImage } }: Props) => {
   const { classes } = useStyles();
   return (
     <div>

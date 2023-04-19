@@ -8,11 +8,7 @@ type PostParams = {
 };
 
 export default function Cards(props: Props) {
-  return (
-    <>
-      <Details details={props.details} />
-    </>
-  );
+  return <Details details={props.details} />;
 }
 export async function getStaticPaths() {
   // Fetch the list of all card IDs from an API

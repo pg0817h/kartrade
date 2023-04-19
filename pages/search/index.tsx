@@ -5,11 +5,7 @@ import { GetServerSidePropsContext } from 'next';
 type Props = { posts: CardData[] };
 
 export default function Home(props: Props) {
-  return (
-    <>
-      <Items posts={props.posts} />
-    </>
-  );
+  return <Items posts={props.posts} />;
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
