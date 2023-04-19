@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { homeStyles } from '../styles/homeStyles';
 import Navbar from '@/components/Navigation';
+import SortBar from '@/components/SortBar';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { classes } = homeStyles();
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className={classes.pageWrapper}>
         <div className={classes.itemsContainer}>
           <Navbar />
+          <SortBar />
           <Component {...pageProps} />
         </div>
       </div>

@@ -1,10 +1,15 @@
 import React, { ChangeEvent } from 'react';
 import { useStyles } from './barStyles';
-type Props = {
-  handleChange: (event: ChangeEvent<HTMLSelectElement>) => void;
-};
-const SortBar: React.FC<Props> = ({ handleChange }: Props) => {
+import { useRouter } from 'next/router';
+
+const SortBar: React.FC = () => {
   const { classes } = useStyles();
+  const router = useRouter();
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value) {
+      router.push(`search/?s=${e.target.value}`);
+    }
+  };
   return (
     <>
       <div className={classes.sortBarWrapper}>

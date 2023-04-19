@@ -15,11 +15,8 @@ export default function Home(props: Props) {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { s: query } = context?.query;
   let res;
-  if (query) {
-    res = await fetch(`http://localhost:3000/api/cards/${query}`);
-  } else {
-    res = await fetch(`http://localhost:3000/api/cards`);
-  }
+  res = await fetch(`http://localhost:3000/api/cards/${query}`);
+
   const posts = await res.json();
   return { props: { posts: posts } };
 }

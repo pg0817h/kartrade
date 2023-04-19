@@ -1,11 +1,13 @@
 import { CardData } from '@/pages/api/cards';
 import Items from '@/components/Items';
+import HomeImage from '@/components/HomeImage';
 
 type Props = { posts: CardData[] };
 
 export default function Home(props: Props) {
   return (
     <>
+      <HomeImage />
       <Items posts={props.posts} />
     </>
   );
