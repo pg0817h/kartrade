@@ -26,5 +26,5 @@ export async function getStaticProps({ params }: { params: PostParams }) {
   const postId = params.id;
   const res = await fetch(`http://localhost:3000/api/card/${postId}`);
   const details = await res.json();
-  return { props: { details: details } };
+  return { props: { details: details, showSortBar: true } };
 }

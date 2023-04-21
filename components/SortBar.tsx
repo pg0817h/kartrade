@@ -7,7 +7,7 @@ const SortBar: React.FC = () => {
   const router = useRouter();
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value) {
-      router.push(`search/?s=${e.target.value}`);
+      router.push(`sort/?s=${e.target.value}`);
     }
   };
   return (

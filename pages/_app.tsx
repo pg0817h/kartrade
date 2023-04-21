@@ -7,6 +7,8 @@ import SortBar from '@/components/SortBar';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { classes } = homeStyles();
+  const { showSortBar } = pageProps || {};
+
   return (
     <MantineProvider
       withGlobalStyles
@@ -45,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className={classes.pageWrapper}>
         <div className={classes.itemsContainer}>
           <Navbar />
-          <SortBar />
+          {!showSortBar && <SortBar />}
           <Component {...pageProps} />
         </div>
       </div>

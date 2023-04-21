@@ -22,7 +22,9 @@ const CardQuntity: React.FC = () => {
           }
         />
       </div>
-      <div className={classes.quantityMargin}>{cardQuantity}</div>
+      <div className={`${classes.quantityMargin} ${classes.quantityNumber}`}>
+        {cardQuantity}
+      </div>
       <div>
         <Image
           className={classes.quantityMargin}

@@ -57,6 +57,6 @@ export const useStyles = createStyles((theme) => ({
   },
   descPrice: {
     fontSize: '22px',
-    fontWeight: 'lighter'
+  
   }
 }));
