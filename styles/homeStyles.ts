@@ -23,7 +23,8 @@ export const homeStyles = createStyles((theme) => ({
     margin: '0% auto',
     maxWidth: '420px',
     [`@media only screen and (min-width: ${em(800)})`]: {
-      position: 'relative',
+      maxWidth: '420px',
+      position: 'fixed',
       width: '100%',
       minHeight: '100vh',
       margin: '0px 0px 0px calc(50% - 1px)',
