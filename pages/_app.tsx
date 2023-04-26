@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { MantineProvider } from '@mantine/core';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
@@ -9,6 +10,10 @@ import SearchBar from '@/components/SearchBar';
 export default function App({ Component, pageProps }: AppProps) {
   const { classes } = homeStyles();
   const { showSortBar } = pageProps || {};
+  const [isSearchOpen, setSearchOpen] = useState(false);
+  const handleSearch = () => {
+    setSearchOpen(!isSearchOpen);
+  };
 
   return (
     <MantineProvider
@@ -47,8 +52,8 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <div className={classes.pageWrapper}>
         <div className={classes.itemsContainer}>
-          <Navbar />
-          <SearchBar />
+          <Navbar handleSearch={handleSearch} />
+          {isSearchOpen && <SearchBar />}
           {!showSortBar && <SortBar />}
           <Component {...pageProps} />
         </div>

@@ -7,7 +7,17 @@ const SortBar: React.FC = () => {
   const router = useRouter();
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value) {
-      router.push(`sort/?s=${e.target.value}`);
+      const url = router.asPath;
+      const queryParams = new URLSearchParams(router.asPath.split('?')[1]);
+      const sValue = queryParams.get('s');
+      if (sValue) {
+        queryParams.set('s', e.target.value);
+        router.push(`${router.pathname}?${queryParams.toString()}&`);
+      } else if (url.includes('sort?')) {
+        router.push(`${router.asPath}s=${e.target.value}&`);
+      } else {
+        router.push(`sort?s=${e.target.value}&`);
+      }
     }
   };
   return (
