@@ -10,9 +10,10 @@ import likeIcon from '../public/like.svg';
 
 interface Props {
   handleSearch: () => void;
+  searchIconRef?: React.RefObject<HTMLImageElement> | null | undefined;
 }
 
-const Navbar: React.FC<Props> = ({ handleSearch }: Props) => {
+const Navbar: React.FC<Props> = ({ handleSearch, searchIconRef }: Props) => {
   const { classes } = useStyles();
   const router = useRouter();
   const navigateHome = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -33,6 +34,7 @@ const Navbar: React.FC<Props> = ({ handleSearch }: Props) => {
           width={18}
           src={searchIcon}
           onClick={handleSearch}
+          ref={searchIconRef}
         />
         <Image alt="likeIcon" width={18} src={likeIcon} />
       </div>
