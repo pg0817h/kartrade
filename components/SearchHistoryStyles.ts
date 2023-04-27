@@ -2,7 +2,6 @@ import { createStyles } from '@mantine/core';
 export const useStyles = createStyles((theme) => ({
   searchHistoryWapper: {
     width: '100%',
-
     marginTop: '5%',
   },
   searchHistoryBar: {

@@ -126,29 +126,25 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<CardData[]>
 ) {
-
-  const {sort,search} = req.query
-  console.log('req.query', req.query)
-  // const [sort,search] = params;
+  const { sort, search } = req.query;
   let sorted = [...dummyCardInfo];
   if (sort === 'price_inc') {
     sorted.sort((a, b) => a.price - b.price);
   } else if (sort === 'price_dec') {
     sorted.sort((a, b) => b.price - a.price);
   }
-  // console.log('sort',sort)
-  // console.log('search',search)
-  if(search){
-    console.log('search', search)
-    console.log('sorted[0].title',sorted[0].title)
-    console.log(`sorted[0].title.includes('Deco')`,sorted[0].title.includes('deco'))
-    sorted =  sorted.filter(
+
+  if (search) {
+    sorted = sorted.filter(
       (item) =>
-        item?.description?.toLowerCase().includes(search.toString().toLowerCase()) ||
-        item?.title?.toLowerCase().includes(search.toString().toLocaleLowerCase())
+        item?.description
+          ?.toLowerCase()
+          .includes(search.toString().toLowerCase()) ||
+        item?.title
+          ?.toLowerCase()
+          .includes(search.toString().toLocaleLowerCase())
     );
   }
 
   res.status(200).json(sorted);
-
 }
