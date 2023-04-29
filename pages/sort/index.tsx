@@ -5,22 +5,22 @@ import EmptyResult from '@/components/EmptyResult';
 import SearhResult from '@/components/SearchResult';
 import { fetchCards } from '@/service/posts';
 
-type Props = { posts: CardData[]; searchTerm: String };
+type Props = { posts: CardData[]; search: String };
 
 interface CardSearchParams {
   sort: string | string[] | undefined;
   search: string | string[] | undefined;
 }
 
-export default function Home({ posts, searchTerm }: Props) {
+export default function Home({ posts, search }: Props) {
   return (
     <>
-      {searchTerm && (
+      {search && (
         <>
           {posts.length ? (
-            <SearhResult searchTerm={searchTerm} resultNum={posts.length} />
+            <SearhResult searchTerm={search} resultNum={posts.length} />
           ) : (
-            <EmptyResult searchTerm={searchTerm} />
+            <EmptyResult searchTerm={search} />
           )}
         </>
       )}

@@ -4,6 +4,7 @@ import { useStyles } from './SearchBarStyles';
 import { useRouter } from 'next/router';
 import searchIcon from '../public/SearchIcon.png';
 import SearchHistory from './SearchHistory';
+import queryString from 'query-string';
 
 interface Props {
   setSearchClose: () => void;
@@ -36,17 +37,11 @@ const SearchBar: React.FC<Props> = ({
   }, []);
   const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      const url = router.asPath;
-      const queryParams = new URLSearchParams(router.asPath.split('?')[1]);
-      const fValue = queryParams.get('f');
-      if (fValue) {
-        queryParams.set('f', searchValue);
-        router.push(`${router.pathname}?${queryParams.toString()}`);
-      } else if (url.includes('sort?')) {
-        router.push(`${router.asPath}f=${searchValue}&`);
-      } else {
-        router.push(`sort?f=${searchValue}&`);
-      }
+      const url = queryString.stringifyUrl({
+        url: `${window.location.href}/sort?`,
+        query: { ...router.query, f: searchValue },
+      });
+      router.push(url);
       setSearchClose();
     }
   };
