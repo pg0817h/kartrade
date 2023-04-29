@@ -2,17 +2,27 @@ import { CardData } from '@/pages/api/cards';
 import Items from '@/components/Items';
 import { GetServerSidePropsContext } from 'next';
 import EmptyResult from '@/components/EmptyResult';
-import SearhResult from '@/components/searchResult';
+import SearhResult from '@/components/SearchResult';
+import { fetchCards } from '@/service/posts';
 
 type Props = { posts: CardData[]; searchTerm: String };
+
+interface CardSearchParams {
+  sort: string | string[] | undefined;
+  search: string | string[] | undefined;
+}
 
 export default function Home({ posts, searchTerm }: Props) {
   return (
     <>
-      {posts.length ? (
-        <SearhResult searchTerm={searchTerm} resultNum={posts.length} />
-      ) : (
-        <EmptyResult searchTerm={searchTerm} />
+      {searchTerm && (
+        <>
+          {posts.length ? (
+            <SearhResult searchTerm={searchTerm} resultNum={posts.length} />
+          ) : (
+            <EmptyResult searchTerm={searchTerm} />
+          )}
+        </>
       )}
       <Items posts={posts} />
     </>
@@ -20,19 +30,10 @@ export default function Home({ posts, searchTerm }: Props) {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const { s: sort, f: searchTerm } = context?.query;
-  let res;
-  let url = 'http://localhost:3000/api/sort/cards?';
-
-  if (sort) {
-    url += `sort=${sort}&`;
-  }
-  if (searchTerm) {
-    url += `search=${searchTerm}&`;
-  }
-  //http://localhost:3000/sort?s=price_inc&f=team
-  url = url.slice(0, -1);
-  res = await fetch(url);
-  const posts = await res.json();
-  return { props: { posts: posts, searchTerm } };
+  const { s: sort, f: search } = context?.query;
+  const params: CardSearchParams = { sort, search };
+  const posts = await fetchCards(params);
+  return {
+    props: { posts: posts, search: search || null },
+  };
 }
