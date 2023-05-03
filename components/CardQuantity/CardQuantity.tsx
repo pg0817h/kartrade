@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useStyles } from './DetailStyles';
+import { useStyles } from '../Details/styles';
 import minusIcon from '../public/minus.svg';
 import plusIcon from '../public/plus.svg';
 

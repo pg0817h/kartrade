@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles } from './EmptyResultStyles';
+import { useStyles } from '../EmptyResult/styles';
 
 type Props = { searchTerm: String; resultNum: Number };
 

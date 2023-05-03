@@ -1,8 +1,8 @@
 import { CardData } from '@/pages/api/cards';
-import Items from '@/components/Items';
+import Items from '@/components/Items/Items';
 import { GetServerSidePropsContext } from 'next';
-import EmptyResult from '@/components/EmptyResult';
-import SearhResult from '@/components/SearchResult';
+import EmptyResult from '@/components/EmptyResult/EmptyResult';
+import SearhResult from '@/components/SearchResult/SearchResult';
 import { fetchCards } from '@/service/posts';
 
 type Props = { posts: CardData[]; search: String };

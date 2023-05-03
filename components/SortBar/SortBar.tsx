@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles } from './barStyles';
+import { useStyles } from './styles';
 import { useRouter } from 'next/router';
 import queryString from 'query-string';
 

@@ -3,9 +3,9 @@ import { MantineProvider } from '@mantine/core';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { homeStyles } from '../styles/homeStyles';
-import Navbar from '@/components/Navigation';
-import SortBar from '@/components/SortBar';
-import SearchBar from '@/components/SearchBar';
+import Navbar from '@/components/Navigation/Navigation';
+import SortBar from '@/components/SortBar/SortBar';
+import SearchBar from '@/components/SearchBar/SearchBar';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { classes } = homeStyles();

@@ -1,7 +1,7 @@
 import { CardData } from '@/pages/api/cards';
-import Items from '@/components/Items';
-import HomeImage from '@/components/HomeImage';
-import Footer from '@/components/Footer';
+import Items from '@/components/Items/Items';
+import HomeImage from '@/components/HomeImage/HomeImage';
+import Footer from '@/components/Footer/Footer';
 
 type Props = { posts: CardData[] };
 

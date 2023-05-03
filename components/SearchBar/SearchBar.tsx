@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { useStyles } from './SearchBarStyles';
+import { useStyles } from './styles';
 import { useRouter } from 'next/router';
-import searchIcon from '../public/SearchIcon.png';
-import SearchHistory from './SearchHistory';
+import searchIcon from '../../public/SearchIcon.png';
+import SearchHistory from '../SearchHistory/SearchHistory';
 import queryString from 'query-string';
 
 interface Props {

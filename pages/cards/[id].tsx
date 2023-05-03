@@ -1,4 +1,4 @@
-import Details from '@/components/Details';
+import Details from '@/components/Details/Details';
 import { DetailData } from '@/pages/api/card/[id]';
 import { CardData } from '@/pages/api/cards';
 type CardProps = CardData;

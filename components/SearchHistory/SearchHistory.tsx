@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles } from './SearchHistoryStyles';
+import { useStyles } from './styles';
 
 const SearchHistory: React.FC = () => {
   const { classes } = useStyles();

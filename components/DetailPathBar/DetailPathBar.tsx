@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import icon from '../public/arrow.svg';
-import { useStyles } from './barStyles';
+import { useStyles } from './styles';
 
 const DetailPathBar: React.FC = () => {
   const { classes } = useStyles();

@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useStyles } from './NavStyles';
-import icon from '../public/navLogo.svg';
-import textIcon from '../public/navTextLogo.svg';
-import searchIcon from '../public/search.svg';
-import profileIcon from '../public/profile.svg';
-import likeIcon from '../public/like.svg';
+import { useStyles } from './styles';
+import icon from '../../public/navLogo.svg';
+import textIcon from '../../public/navTextLogo.svg';
+import searchIcon from '../../public/search.svg';
+import profileIcon from '../../public/profile.svg';
+import likeIcon from '../../public/like.svg';
 
 interface Props {
   handleSearch: () => void;
