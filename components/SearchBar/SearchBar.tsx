@@ -38,8 +38,8 @@ const SearchBar: React.FC<Props> = ({
   const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const url = queryString.stringifyUrl({
-        url: `${window.location.href}/sort?`,
-        query: { ...router.query, f: searchValue },
+        url: `${window.location.href}`,
+        query: { ...router.query, search: searchValue },
       });
       router.push(url);
       setSearchClose();

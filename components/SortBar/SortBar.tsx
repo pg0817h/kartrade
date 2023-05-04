@@ -9,8 +9,8 @@ const SortBar: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value) {
       const url = queryString.stringifyUrl({
-        url: `${window.location.href}/sort?`,
-        query: { ...router.query, s: e.target.value },
+        url: `${window.location.href}`,
+        query: { ...router.query, sort: e.target.value },
       });
       router.push(url);
     }

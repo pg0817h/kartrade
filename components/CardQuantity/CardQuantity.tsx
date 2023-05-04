@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useStyles } from '../Details/styles';
-import minusIcon from '../public/minus.svg';
-import plusIcon from '../public/plus.svg';
+import plusIcon from '../../public/plus.svg';
+import minusIcon from '../../public/minus.svg';
 
 const CardQuntity: React.FC = () => {
   const { classes } = useStyles();

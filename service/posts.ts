@@ -1,16 +1,13 @@
-interface CardSearchParams {
-  sort: string | string[] | undefined;
-  search: string | string[] | undefined;
-}
-const generateSearchParams = (params: CardSearchParams) => {
-  const url = new URL('http://localhost:3000/api/sort/cards?');
-  Object.entries(params).forEach(([key, value]) => {
-    if (value) url.searchParams.set(key, value);
-  });
+import queryString from "query-string";
+import { ParsedUrlQuery } from "querystring";
+
+
+const generateSearchParams = (params : ParsedUrlQuery) => {
+  const url =queryString.stringifyUrl({url:'http://localhost:3000/api/cards', query: {...params} })
   return url;
 };
-export const fetchCards = async (params: CardSearchParams) => {
+export const fetchCards = async (params : ParsedUrlQuery) => {
   const url = generateSearchParams(params);
-  const res = await fetch(url.href);
+  const res = await fetch(url);
   return await res.json();
 };
