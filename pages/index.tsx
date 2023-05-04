@@ -6,11 +6,13 @@ import { GetServerSidePropsContext } from 'next';
 import EmptyResult from '@/components/EmptyResult/EmptyResult';
 import SearhResult from '@/components/SearchResult/SearchResult';
 import { fetchCards } from '@/service/posts';
-import { HOME_PAGE } from '@/utils/common';
+import { useRouter } from 'next/router';
 
-type Props = { posts: CardData[]; search: String };
+type Props = { posts: CardData[]; search: string | null };
 
 export default function Home({ posts, search }: Props) {
+  const router = useRouter();
+
   return (
     <>
       {search && (
@@ -22,7 +24,10 @@ export default function Home({ posts, search }: Props) {
           )}
         </>
       )}
-      {window.location.href === HOME_PAGE && <HomeImage />}
+      {router.pathname === '/' &&
+        Object.values(router.query).every((q) => q === undefined) && (
+          <HomeImage />
+        )}
       <Items posts={posts} />
       <Footer />
     </>
@@ -30,9 +35,9 @@ export default function Home({ posts, search }: Props) {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const { search } = context?.query;
-  const posts = await fetchCards(context?.query);
+  const { search } = context.query;
+  const posts = await fetchCards(context.query);
   return {
-    props: { posts: posts, search: search || null },
+    props: { posts: posts, search: search ?? null },
   };
 }

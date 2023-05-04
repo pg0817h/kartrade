@@ -21,8 +21,9 @@ const SearchBar: React.FC<Props> = ({
   const searchBarRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+
       if (
-        searchIconRef?.current &&
+        searchIconRef.current &&
         searchBarRef.current &&
         !searchIconRef.current.contains(e.target as Node) &&
         !searchBarRef.current.contains(e.target as Node)

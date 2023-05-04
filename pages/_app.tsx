@@ -56,8 +56,8 @@ export default function App({ Component, pageProps }: AppProps) {
           <Navbar handleSearch={handleSearch} searchIconRef={searchIconRef} />
           {isSearchOpen && (
             <SearchBar
-              setSearchClose={() => setSearchOpen(false)}
               searchIconRef={searchIconRef}
+              setSearchClose={() => setSearchOpen(false)}
             />
           )}
           {!showSortBar && <SortBar />}

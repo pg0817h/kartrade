@@ -137,11 +137,11 @@ export default function handler(
   if (search) {
     sorted = sorted.filter(
       (item) =>
-        item?.description
-          ?.toLowerCase()
+        item.description
+          .toLowerCase()
           .includes(search.toString().toLowerCase()) ||
-        item?.title
-          ?.toLowerCase()
+        item.title
+          .toLowerCase()
           .includes(search.toString().toLocaleLowerCase())
     );
   }
