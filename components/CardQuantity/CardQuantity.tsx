@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useStyles } from './DetailStyles';
-import minusIcon from '../public/minus.svg';
-import plusIcon from '../public/plus.svg';
+import { useStyles } from '../Details/styles';
+import plusIcon from '../../public/plus.svg';
+import minusIcon from '../../public/minus.svg';
 
 const CardQuntity: React.FC = () => {
   const { classes } = useStyles();
@@ -22,7 +22,9 @@ const CardQuntity: React.FC = () => {
           }
         />
       </div>
-      <div className={classes.quantityMargin}>{cardQuantity}</div>
+      <div className={`${classes.quantityMargin} ${classes.quantityNumber}`}>
+        {cardQuantity}
+      </div>
       <div>
         <Image
           className={classes.quantityMargin}

@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { DetailData } from '@/pages/api/card/[id]';
-import ImageWrapper from './ImageWrapper';
-import CardQuntity from './CardQuantity';
-import { useStyles } from './DetailStyles';
-import icon from '../public/message.svg';
-import DetailPathBar from './DetailPathBar';
+import ImageWrapper from '../ImageWrapper/ImageWrapper';
+import CardQuntity from '../CardQuantity/CardQuantity';
+import { useStyles } from './styles';
+import icon from '../../public/message.svg';
+import DetailPathBar from '../DetailPathBar/DetailPathBar';
 
 type Props = { details: DetailData[] };
 

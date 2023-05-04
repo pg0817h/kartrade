@@ -1,13 +1,18 @@
 import React from 'react';
-import { useStyles } from './barStyles';
+import { useStyles } from './styles';
 import { useRouter } from 'next/router';
+import queryString from 'query-string';
 
 const SortBar: React.FC = () => {
   const { classes } = useStyles();
   const router = useRouter();
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value) {
-      router.push(`search/?s=${e.target.value}`);
+      const url = queryString.stringifyUrl({
+        url: `${window.location.href}`,
+        query: { ...router.query, sort: e.target.value },
+      });
+      router.push(url);
     }
   };
   return (

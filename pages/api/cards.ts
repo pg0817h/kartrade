@@ -126,5 +126,25 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<CardData[]>
 ) {
-  res.status(200).json(dummyCardInfo);
+  const { sort, search } = req.query;
+  let sorted = [...dummyCardInfo];
+  if (sort === 'price_inc') {
+    sorted.sort((a, b) => a.price - b.price);
+  } else if (sort === 'price_dec') {
+    sorted.sort((a, b) => b.price - a.price);
+  }
+
+  if (search) {
+    sorted = sorted.filter(
+      (item) =>
+        item.description
+          .toLowerCase()
+          .includes(search.toString().toLowerCase()) ||
+        item.title
+          .toLowerCase()
+          .includes(search.toString().toLocaleLowerCase())
+    );
+  }
+
+  res.status(200).json(sorted);
 }

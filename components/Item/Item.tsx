@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardData } from '@/pages/api/cards';
-import { useStyles } from './ItemsStyles';
+import { useStyles } from '../Items/styles';
 
 type Props = { post: CardData };
 const Item: React.FC<Props> = ({

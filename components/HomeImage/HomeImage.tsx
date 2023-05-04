@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles } from './HomeImgStyles';
+import { useStyles } from './styles';
 
 const HomeImage: React.FC = () => {
   const { classes } = useStyles();

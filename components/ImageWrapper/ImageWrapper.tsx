@@ -1,6 +1,6 @@
 import React from 'react';
 import { DetailData } from '@/pages/api/card/[id]';
-import { useStyles } from './DetailStyles';
+import { useStyles } from '../Details/styles';
 
 type Props = { detail: DetailData };
 

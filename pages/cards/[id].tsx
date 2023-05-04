@@ -1,4 +1,4 @@
-import Details from '@/components/Details';
+import Details from '@/components/Details/Details';
 import { DetailData } from '@/pages/api/card/[id]';
 import { CardData } from '@/pages/api/cards';
 type CardProps = CardData;
@@ -26,5 +26,5 @@ export async function getStaticProps({ params }: { params: PostParams }) {
   const postId = params.id;
   const res = await fetch(`http://localhost:3000/api/card/${postId}`);
   const details = await res.json();
-  return { props: { details: details } };
+  return { props: { details: details, showSortBar: true } };
 }

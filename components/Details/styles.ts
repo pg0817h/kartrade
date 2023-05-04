@@ -47,7 +47,6 @@ export const useStyles = createStyles((theme) => ({
     messageBox: {
         display: 'flex',
         alignItems:'center',
-        fontWeight: 'lighter'
        
     },
     infoContainer: {
@@ -70,7 +69,7 @@ export const useStyles = createStyles((theme) => ({
     },
     infoDescription: {
       color: theme.colors.gray[0],
-      fontWeight: 'lighter'
+
     },
     taxDescription: {
       color: theme.colors.gray[0],
@@ -88,9 +87,10 @@ export const useStyles = createStyles((theme) => ({
       width: '100%',
       color: theme.colors.black
     },
-   
     quantityMargin: {
       marginRight: '38px',
-     
+    },
+    quantityNumber: {
+      width: '19px'
     }
 }));

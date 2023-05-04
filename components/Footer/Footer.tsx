@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import logo from '../public/navTextLogo.svg';
-import { useStyles } from './FooterStyles';
+import logo from '../../public/navTextLogo.svg';
+import { useStyles } from './styles';
 
 const Footer: React.FC = () => {
   const { classes } = useStyles();
